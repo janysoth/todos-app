@@ -1,0 +1,80 @@
+/* 
+general 
+-------
+*/
+body {
+  font: 300 16px/1.5 'Roboto', sans-serif;
+  background-color: lightcyan ;text-align: center; color: black;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 400;
+}
+
+/*--For the Trashcan Icon--*/
+.btn-icon {
+  background: none;
+  border: none;
+  display: inline-block;
+  vertical-align: top;
+  color: red;
+  cursor: pointer;
+  transition: background 0.3s linear, color 0.3s linear;
+}
+
+.btn-icon:before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+
+.btn-icon.remove:before {
+  content: '\f2ed';
+}
+
+/*--For the list holder--*/
+.listHolder li {
+  counter-increment: step-counter;
+  overflow: hidden;
+  padding: 0 0 20px 30px;
+  position: relative;
+}
+
+.listHolder li:before {
+  content: counter(step-counter);
+  background: #4ac7be;
+  color: #fff;
+  font-size: 14px;
+  padding: 0px 6px;
+  border-radius: 3px;
+  position: absolute;
+  top: 0;
+  left: 40%;
+}
+
+.listHolder .btn-icon {
+  float: center;
+  margin: 0 0 0 20px;
+}
+
+
+button{
+  padding: 10px 20px;
+  margin-top: 10px;
+	font-size: 16px;
+	background-color: #5b8ebf;
+	border: thin solid #d5e4d4;
+	cursor: pointer;
+	color: #fff;
+}
+
+button:hover{
+	border: thin solid red;
+}
+
+
+
+
+
+
+
