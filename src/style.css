@@ -12,6 +12,21 @@ h1 {
   font-weight: 400;
 }
 
+input[type="text"] {
+  width: 200%;
+  height: 140px; 
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 10px;
+  font: 300 16px/1.5 'Sofia', sans-serif;
+  transition: border 0.3s linear;
+}
+
+input[type="text"]:focus {
+  border-color: red;
+  outline: none;
+}
+
 /*--For the Trashcan Icon--*/
 .btn-icon {
   background: none;
@@ -36,7 +51,7 @@ h1 {
 .listHolder li {
   counter-increment: step-counter;
   overflow: hidden;
-  padding: 0 0 20px 30px;
+  padding: 0 0 10px 30px;
   position: relative;
 }
 

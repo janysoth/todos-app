@@ -1,5 +1,5 @@
 // Create variables
-const divList = document.querySelector('.listHolder');
+const messageList = document.querySelector('.listHolder');
 const addInput = document.querySelector('#userInput');
 const addBtn = document.querySelector('#addBtn');
 
@@ -10,7 +10,7 @@ function addList (){
         return false;
     }
 
-    const ul = divList.querySelector('ul');
+    const ul = messageList.querySelector('ul');
     const li = document.createElement('li');
     li.innerHTML = `Welcome to my page, ${addInput.value}.`;
     addInput.value = ''; // Add this to remove the previous
@@ -43,7 +43,7 @@ function createBtn(button) {
 }
 
 // To Remove each message line when the button is clicked
-divList.addEventListener('click', (event) => {
+messageList.addEventListener('click', (event) => {
   if (event.target.tagName === 'BUTTON') {
     const button = event.target;
     const li = button.parentNode;
