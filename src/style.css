@@ -43,10 +43,6 @@ input[type="text"]:focus {
   font-weight: 900;
 }
 
-.btn-icon.remove:before {
-  content: '\f2ed';
-}
-
 /*--For the list holder--*/
 .listHolder li {
   counter-increment: step-counter;
@@ -64,7 +60,7 @@ input[type="text"]:focus {
   border-radius: 3px;
   position: absolute;
   top: 0;
-  left: 40%;
+  left: 35%;
 }
 
 .listHolder .btn-icon {

@@ -35,9 +35,19 @@ const listUl = document.querySelector('.list');
 
 // create remove button
 function createBtn(button) {
+  // create down button
+  const editBtn = document.createElement('button');
+  editBtn.className = 'btn-icon down';
+  editBtn.classList.add('edit');
+  editBtn.innerText = "Edit";
+  button.appendChild(editBtn);
+
   const removeBtn = document.createElement('button');
   removeBtn.className = 'btn-icon remove';
+  removeBtn.classList.add('remove');
+  removeBtn.innerText = "Remove";
   button.appendChild(removeBtn);
+
 
   return button;
 }
