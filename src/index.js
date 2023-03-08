@@ -1,64 +1,79 @@
-// Create variables
-const messageList = document.querySelector('.listHolder');
-const addInput = document.querySelector('#userInput');
-const addBtn = document.querySelector('#addBtn');
+window.addEventListener('load', () => {
+	const form = document.querySelector("#newTaskForm");
+	const input = document.querySelector("#newTaskInput");
+	const listElement = document.querySelector("#tasks");
 
-// Create a function to create the list
-function addList (){
-    if (addInput.value === '') {
-        alert('Please Enter Your Name.') 
-        return false;
-    }
+	form.addEventListener('submit', (e) => {
+		e.preventDefault();
 
-    const ul = messageList.querySelector('ul');
-    const li = document.createElement('li');
-    li.innerHTML = `Welcome to my page, ${addInput.value}.`;
-    addInput.value = ''; // Add this to remove the previous
-    ul.appendChild(li);
-    createBtn(li);
-}
+		const task = input.value;
 
-addBtn.addEventListener('click', () => {
-    addList();
-})
+        if (!task){
+            alert("Please Enter Your Task Below.");
+            return;
+        }
 
-// Add list when Enter Key pressed
-addInput.addEventListener('keyup', (event) => {
-    if(event.which === 13)
-        addList();
-})
+        // Create a div class called "task":
+		const classTask = document.createElement('div');
+		classTask.classList.add('task');
 
-/* 3. create action buttons*/
+        // Create Another div class called "content":
+		const classContent = document.createElement('div');
+		classContent.classList.add('content');
 
-// create variables
-const listUl = document.querySelector('.list');
+        // Put the div class "content" into div class "task":
+		classTask.appendChild(classContent);
 
-// create remove button
-function createBtn(button) {
-  // create down button
-  const editBtn = document.createElement('button');
-  editBtn.className = 'btn-icon down';
-  editBtn.classList.add('edit');
-  editBtn.innerText = "Edit";
-  button.appendChild(editBtn);
+        // Create Input Box:
+		const taskInput = document.createElement('input');
+		taskInput.classList.add('text');
+		taskInput.type = 'text';
+		taskInput.value = task;
+		taskInput.setAttribute('readonly', 'readonly');
 
-  const removeBtn = document.createElement('button');
-  removeBtn.className = 'btn-icon remove';
-  removeBtn.classList.add('remove');
-  removeBtn.innerText = "Remove";
-  button.appendChild(removeBtn);
+        // Put the input class into content class:
+		classContent.appendChild(taskInput);
 
+        // Create action class to put buttons in:
+		const classActions = document.createElement('div');
+		classActions.classList.add('actions');
+		
+        // Create An Edit Button:
+		const taskEditElement = document.createElement('button');
+		taskEditElement.classList.add('edit');
+		taskEditElement.innerText = 'Edit';
 
-  return button;
-}
+        // Create A Delete Button
+		const taskDeleteElement = document.createElement('button');
+		taskDeleteElement.classList.add('delete');
+		taskDeleteElement.innerText = 'Delete';
 
-// To Remove each message line when the button is clicked
-messageList.addEventListener('click', (event) => {
-  if (event.target.tagName === 'BUTTON') {
-    const button = event.target;
-    const li = button.parentNode;
-    const ul = li.parentNode;
-    if (button.className === 'btn-icon remove') 
-      ul.removeChild(li);
-  }
+        // Put both buttons in the class actions:
+		classActions.appendChild(taskEditElement);
+		classActions.appendChild(taskDeleteElement);
+
+        // Put class action in the class task:
+		classTask.appendChild(classActions);
+
+        // Put class task in the main class tasks:
+		listElement.appendChild(classTask);
+
+        // To empty out the input after user submit:
+		input.value = '';
+
+		taskEditElement.addEventListener('click', (e) => {
+			if (taskEditElement.innerText.toLowerCase() == "edit") {
+				taskEditElement.innerText = "Save";
+				taskInput.removeAttribute("readonly");
+				taskInput.focus();
+			} else {
+				taskEditElement.innerText = "Edit";
+				taskInput.setAttribute("readonly", "readonly");
+			}
+		});
+
+		taskDeleteElement.addEventListener('click', (e) => {
+			listElement.removeChild(classTask);
+		});
+	});
 });

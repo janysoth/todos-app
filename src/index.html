@@ -14,15 +14,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Hello! What is your name?</h1>
-  <input id="userInput"><br>
-  <button id="addBtn">Submit</button>
-  <button onclick="location.reload()">Reset</button>
-  <div class ="listHolder">
-      <ul class="list">
-        <!--List will be created by JavaScript-->
-      </ul>
-  </div>
+	
+	<header>
+		<h1>Task List</h1>
+		<form id="newTaskForm">
+			<input 
+				type="text" 
+				name="newTaskInput" 
+				id="newTaskInput" 
+				placeholder="What do you have planned?" />
+			<input 
+				type="submit"
+				id="newTaskSubmit" 
+				value="SUBMIT" />
+		</form>
+	</header>
+	<main>
+		<section class="task-list">
+			<h2>Tasks:</h2>
+
+			<div id="tasks">
+
+			</div>
+		</section>
+	</main>
  
     <script src="index.js"></script> 
 </body>

@@ -1,91 +1,37 @@
-/* 
-general 
--------
-*/
 body {
-  font: 300 16px/1.5 'Roboto', sans-serif;
-  background-color: lightcyan ;text-align: center; color: black;
+    background-color: lightblue;
+    text-align: center;
+  }
+  
+  #container {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+  }
+  
+  #edit {
+    padding: 5px;
+    outline: none;
+  }
+  
+  button, #newTaskSubmit {
+    width: 80px;
+    padding: 5px;
+    margin: 0 3px;
+    background-color: #ff7e00;
+    outline: none;
+    border: 1px solid #ff7e00;
+    box-shadow: 2px 2px 2px #3f3f3f;
+  }
+  
+  button:hover {
+    box-shadow: 2px 2px 3px ;
+  }
+  
+  button:active {
+    box-shadow: 1px 1px 3px ;
+  }
+  
+.task .actions {
+	padding: 5px;
 }
-
-h1 {
-  font-size: 32px;
-  font-weight: 400;
-}
-
-input[type="text"] {
-  width: 200%;
-  height: 140px; 
-  border: 1px solid #ccc;
-  background: #fff;
-  padding: 10px;
-  font: 300 16px/1.5 'Sofia', sans-serif;
-  transition: border 0.3s linear;
-}
-
-input[type="text"]:focus {
-  border-color: red;
-  outline: none;
-}
-
-/*--For the Trashcan Icon--*/
-.btn-icon {
-  background: none;
-  border: none;
-  display: inline-block;
-  vertical-align: top;
-  color: red;
-  cursor: pointer;
-  transition: background 0.3s linear, color 0.3s linear;
-}
-
-.btn-icon:before {
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-}
-
-/*--For the list holder--*/
-.listHolder li {
-  counter-increment: step-counter;
-  overflow: hidden;
-  padding: 0 0 10px 30px;
-  position: relative;
-}
-
-.listHolder li:before {
-  content: counter(step-counter);
-  background: #4ac7be;
-  color: #fff;
-  font-size: 14px;
-  padding: 0px 6px;
-  border-radius: 3px;
-  position: absolute;
-  top: 0;
-  left: 35%;
-}
-
-.listHolder .btn-icon {
-  float: center;
-  margin: 0 0 0 20px;
-}
-
-
-button{
-  padding: 10px 20px;
-  margin-top: 10px;
-	font-size: 16px;
-	background-color: #5b8ebf;
-	border: thin solid #d5e4d4;
-	cursor: pointer;
-	color: #fff;
-}
-
-button:hover{
-	border: thin solid red;
-}
-
-
-
-
-
-
-
