@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Welcome Message</title>
+  <title>To-Do Task</title>
   <!-- using font awesome for icons -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
     crossorigin="anonymous">
@@ -16,17 +16,21 @@
 <body>
 	
 	<header>
-		<h1>Task List</h1>
+		<h1>Task List:</h1>
 		<form id="newTaskForm">
 			<input 
 				type="text" 
 				name="newTaskInput" 
 				id="newTaskInput" 
-				placeholder="What do you have planned?" />
+				placeholder="What do you have planned?"/>
 			<input 
 				type="submit"
 				id="newTaskSubmit" 
 				value="SUBMIT" />
+			<input 
+				type="reset"
+				id="newTaskSubmit" 
+				value="CLEAR" onclick="location.reload()"/>
 		</form>
 	</header>
 	<main>
@@ -34,7 +38,16 @@
 			<h2>Tasks:</h2>
 
 			<div id="tasks">
-
+				<!--These div below will be created by JavaScript-->
+				<!-- <div class="task">
+					<div class="content">
+						<input type="text" class="text" value="A new task" readonly>
+					</div>
+					<div class="actions">
+						<button class="edit">Edit</button>
+						<button class="delete">Delete</button>
+					</div>
+				</div> -->
 			</div>
 		</section>
 	</main>

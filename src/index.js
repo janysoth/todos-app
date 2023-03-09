@@ -1,4 +1,4 @@
-window.addEventListener('load', () => {
+
 	const form = document.querySelector("#newTaskForm");
 	const input = document.querySelector("#newTaskInput");
 	const listElement = document.querySelector("#tasks");
@@ -7,7 +7,6 @@ window.addEventListener('load', () => {
 		e.preventDefault();
 
 		const task = input.value;
-
         if (!task){
             alert("Please Enter Your Task Below.");
             return;
@@ -39,18 +38,17 @@ window.addEventListener('load', () => {
 		classActions.classList.add('actions');
 		
         // Create An Edit Button:
-		const taskEditElement = document.createElement('button');
-		taskEditElement.classList.add('edit');
-		taskEditElement.innerText = 'Edit';
+		const editBtn = document.createElement('button');
+		editBtn.classList.add('edit');
+		editBtn.innerText = 'Edit';
 
-        // Create A Delete Button
-		const taskDeleteElement = document.createElement('button');
-		taskDeleteElement.classList.add('delete');
-		taskDeleteElement.innerText = 'Delete';
-
+		// Create A Delete Button:
+		const deleteBtn = document.createElement('button');
+  		deleteBtn.className = 'btn-icon remove';
+		
         // Put both buttons in the class actions:
-		classActions.appendChild(taskEditElement);
-		classActions.appendChild(taskDeleteElement);
+		classActions.appendChild(editBtn);
+		classActions.appendChild(deleteBtn);
 
         // Put class action in the class task:
 		classTask.appendChild(classActions);
@@ -61,19 +59,19 @@ window.addEventListener('load', () => {
         // To empty out the input after user submit:
 		input.value = '';
 
-		taskEditElement.addEventListener('click', (e) => {
-			if (taskEditElement.innerText.toLowerCase() == "edit") {
-				taskEditElement.innerText = "Save";
+		editBtn.addEventListener('click', (e) => {
+			if (editBtn.innerText.toLowerCase() == "edit") {
+				editBtn.innerText = "Save";
 				taskInput.removeAttribute("readonly");
 				taskInput.focus();
 			} else {
-				taskEditElement.innerText = "Edit";
+				editBtn.innerText = "Edit";
 				taskInput.setAttribute("readonly", "readonly");
 			}
 		});
 
-		taskDeleteElement.addEventListener('click', (e) => {
+		deleteBtn.addEventListener('click', (e) => {
 			listElement.removeChild(classTask);
 		});
+		
 	});
-});
