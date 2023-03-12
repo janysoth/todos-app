@@ -1,51 +1,3 @@
-/* body {
-    background-color: lightblue;
-    text-align: center;
-  }
-  
-  #container {
-    width: 100%;
-    height: 100%;
-    padding: 10px;
-  }
-  
-  #edit {
-    padding: 5px;
-    outline: none;
-  }
-  
-  button, #newTaskSubmit {
-    width: 80px;
-    padding: 5px;
-    margin: 0 3px;
-    background-color: #ff7e00;
-    outline: none;
-    border: 1px solid #ff7e00;
-    box-shadow: 2px 2px 2px #3f3f3f;
-  }
-  
-  button:hover {
-    box-shadow: 2px 2px 3px ;
-  }
-  
-  button:active {
-    box-shadow: 1px 1px 3px ;
-  }
-  
-.task .actions {
-	padding: 5px;
-} */
-
-:root {
-	--dark: #374151;
-	--darker: #1F2937;
-	--darkest: #111827;
-	--grey: #6B7280;
-	--pink: #EC4899;
-	--purple: #8B5CF6;
-	--light: #EEE;
-}
-
 * {
 	margin: 0;
 	box-sizing: border-box;
@@ -57,7 +9,7 @@ body {
 	flex-direction: column;
 	min-height: 100vh;
 	color: #FFF;
-	background-color: lightgoldenrodyellow;
+	background-color: green;
 }
 
 header {
@@ -70,7 +22,7 @@ header {
 header h1{ 
 	font-size: 2.5rem;
 	font-weight: 300;
-	color: var(--pink);
+	color: goldenrod;
 	margin-bottom: 1rem;
     text-decoration: underline;
 }
@@ -88,23 +40,23 @@ input, button {
 
 #newTaskInput {
 	flex: 1 1 0%;
-	background-color: var(--light);
+	background-color: white;
 	padding: 1rem;
 	border-radius: 1rem;
 	margin-right: 1rem;
-	color: var(--darker);
+	color: goldenrod;
 	font-size: 1.25rem;
 }
 
 #newTaskInput::placeholder {
-	color: var(--darker);
+	color: gray;
 }
 
 #newTaskSubmit {
-	color: var(--pink);
+	color: goldenrod;
 	font-size: 1.25rem;
 	font-weight: 700;
-	background-image: linear-gradient(to right, var(--pink), var(--purple));
+	background-image: linear-gradient(to right, red, goldenrod);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	cursor: pointer;
@@ -113,6 +65,7 @@ input, button {
 
 #newTaskSubmit:hover {
 	opacity: 0.8;
+	color: white;
 }
 
 #newTaskSubmit:active {
@@ -133,14 +86,15 @@ main {
 .task-list h2 {
 	font-size: 1.5rem;
 	font-weight: 300;
-	color: var(--grey);
+	color: goldenrod;
 	margin-bottom: 1rem;
+	text-decoration: underline;
 }
 
 #tasks .task {
 	display: flex;
 	justify-content: space-between;
-	background-color: var(--light);
+	background-color: white;
 	padding: 1rem;
 	border-radius: 1rem;
 	margin-bottom: 1rem;
@@ -151,7 +105,7 @@ main {
 }
 
 .task .content .text {
-	color: var(--darker);
+	color: black;
 	font-size: 1.125rem;
 	width: 100%;
 	display: block;
@@ -159,7 +113,7 @@ main {
 }
 
 .task .content .text:not(:read-only) {
-	color: var(--pink);
+	color: goldenrod;
 }
 
 .task .actions {
@@ -186,7 +140,7 @@ main {
 
 .task .actions .edit {
 
-    background-image: linear-gradient(to right, red, blue);
+    background-image: linear-gradient(to right, red, goldenrod);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
@@ -199,6 +153,5 @@ main {
 .btn-icon.remove:before {
     content: '\f2ed';
     color: red;
-    
 }
 
